@@ -1,0 +1,31 @@
+ * {
+  margin: 0;
+}
+
+header,footer, section, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
+}
+
+header{
+    top:0;
+    background-color: green;
+    position: sticky;
+}
+
+#Hero {
+    height: 100vh;
+    background-image: url("Lab3/images/mafra15.jpg");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+#hero p{
+    position: relative;
+    top: 20px; left: 100px;
+    width: 400px; height: 300px;
+}
