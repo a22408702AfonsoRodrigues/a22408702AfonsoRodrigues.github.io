@@ -1,3 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: grey; 
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+
+
 body {
     background-color: white;
 }
@@ -12,4 +33,42 @@ th,td {
     border: 1px solid black; 
     padding: 8px;
     text-align: center;
+}
+
+
+nav {
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: rgb(38, 99, 111); 
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    min-height: 300px;
+}
+
+main h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
 }
