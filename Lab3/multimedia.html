@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+<link rel="stylesheet" href="styles.css">
 
 <head>
     <meta charset="UTF-8">
@@ -15,6 +16,11 @@
         .fotografias img {
             width: 150px;
             border-radius: 20px;
+            transition: width 1s;
+        }
+
+        .fotografias img:hover {
+            width: 200px;
         }
     </style>
 </head>
@@ -30,11 +36,11 @@
         </nav>
     </header>
     <main>
-        <h2>Multimédia</h2>
-        <p>Nesta página encontra conteúdos multimédia.</p>
-        <section>
+        <section id="Fotografias">
+            <h2>Multimédia</h2>
+            <p>Nesta página encontra conteúdos multimédia.</p>
             <h3>Fotografias</h3>
-            <div class"fotografias">
+            <div class="fotografias">
                 <img src="images/mafra1.jpg" alt:convento>
                 <img src="images/mafra2.jpg" alt:convento>
                 <img src="images/mafra4.jpg" alt:tapada de mafra>
@@ -44,16 +50,21 @@
                 <img src="images/mafra11.png" alt:convento>
                 <img src="images/mafra12.png" alt:tapada de mafra>
             </div>
-
+<div class="container">  
+        <section id="imagem">
+            <img src="images/istockphoto-486022047-1024x1024.jpg" alt:convento>
+              <div class="texto"> Manda quem pode, obedece quem deve.</div>
         </section>
-        <section>
+</div>
+        </section>
+        <section id="video">
             <h3>Vídeo</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/1Hnhr6Pmxbc?si=d33-DjvxhJLawQ43"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
-        <section>
+        <section id="Poesia">
             <h3>Poesia</h3>
             <div>
                 <p>Entre vales verdes e mar aberto,<br>
