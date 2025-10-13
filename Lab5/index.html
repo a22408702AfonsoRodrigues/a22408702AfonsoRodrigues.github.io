@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <title>Lab5</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+
+    <section>
+        <p id ="passa">1. Passa aqui!</p>
+    </section>
+
+    <section id ="pinta">
+        <p>2. Pinta-me! </p>
+        <button id = "btnVermelho">Vermelho</button>
+        <button id = "btnVerde">Verde</button>
+        <button id = "btnAzul">Azul</button>
+    </section>
+
+    <section id="escrever">
+        <p>3.Experimenta escrever...</p>
+        <input type="text" id="caixaTexto" placeholder="">
+
+    </section>
+
+    <script>
+        const texto = document.getElementById("passa");
+        const textoPinta = document.querySelector("#pinta p");
+        const vermelho = document.getElementById("btnVermelho");
+        const verde = document.getElementById("btnVerde");
+        const azul = document.getElementById("btnAzul");
+        const input = document.getElementById("caixaTexto");
+        const cores = ["blue", "red", "yellow"];
+        let i = 0;
+
+
+
+        function dizerObrigado () {
+            texto.textContent = "Obrigado por passares";
+        }
+
+        function voltaNormal () {
+            texto.textContent = "1. Passa aqui!";
+        }
+
+        function pintarVermelho () {
+            textoPinta.style.color = "red";
+        }
+
+        function pintarVerde () {
+            textoPinta.style.color = "green";
+        }
+
+        function pintarAzul () {
+            textoPinta.style.color = "blue";
+        }
+
+
+        function mudarCor() {
+            input.style.backgroundColor = cores[i];
+
+            i++;
+            if (i >= cores.length) {
+                i = 0;
+            }
+        }
+
+        texto.addEventListener("mouseover", dizerObrigado);
+        texto.addEventListener("mouseout", voltaNormal);
+        vermelho.addEventListener("click", pintarVermelho);
+        verde.addEventListener("click", pintarVerde);
+        azul.addEventListener("click", pintarAzul);
+        input.addEventListener("input", mudarCor);
+
+        
+    </script>
+
+    <footer>
+
+</footer>
+</body>
+
+</html>
