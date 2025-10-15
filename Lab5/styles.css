@@ -20,3 +20,56 @@
     padding: 5px 15px;
     height: 10px;
 }
+
+#cor {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#corSelect {
+    height: 5%;
+}
+
+#conta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#nomeSection {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#nomeSection form {
+    display: flex;
+}
+
+#auto {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+#passaSection {
+    display: flex;
+}
+
+section {
+    margin: 15px;
+}

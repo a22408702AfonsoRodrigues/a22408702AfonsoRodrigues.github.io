@@ -10,15 +10,21 @@
 
 <body>
 
-    <section>
+    <header>
+        <h1>Lab5</h1>
+    </header>
+
+    <main>
+
+    <section id="passaSection">
         <p id ="passa">1. Passa aqui!</p>
     </section>
 
     <section id ="pinta">
         <p>2. Pinta-me! </p>
-        <button id = "btnVermelho">Vermelho</button>
-        <button id = "btnVerde">Verde</button>
-        <button id = "btnAzul">Azul</button>
+        <button class = "color" data-color="red">Vermelho</button>
+        <button class = "color" data-color="green">Verde</button>
+        <button class = "color" data-color="blue">Azul</button>
     </section>
 
     <section id="escrever">
@@ -27,38 +33,55 @@
 
     </section>
 
+    <section id="cor">
+        <p>4. Escolha uma cor</p>
+        <select id="corSelect">
+            <option value="white">Branco</option>
+            <option value="red">Vermelho</option>
+            <option value="blue">Azul</option>
+        </select>
+    </section>
+
+    <section id="conta">
+        <p>5.</p>
+        <button id="btnConta">Conta</button>
+        <p id="contador">0</p>
+    </section>
+
+    <section id="nomeSection">
+
+        <p>6.</p>
+        
+        <form>
+            <input id="nome" type="text" placeholder="insira o seu nome">
+            <input id="idade" type="text" placeholder="insira a sua idade">
+            <input id="btnNome" type="submit">
+        </form>
+        <p id="textoNome"></p>
+    </section>
+
+    <section id="auto">
+        <p>7. Automatic Counter: <p id="autoCounter">0</p></p>
+    </section>
+
+    </main>
+
     <script>
         const texto = document.getElementById("passa");
         const textoPinta = document.querySelector("#pinta p");
-        const vermelho = document.getElementById("btnVermelho");
-        const verde = document.getElementById("btnVerde");
-        const azul = document.getElementById("btnAzul");
         const input = document.getElementById("caixaTexto");
         const cores = ["blue", "red", "yellow"];
         let i = 0;
+        const nomeInput = document.getElementById("nome");
+        const idadeInput = document.getElementById("idade");
+        const btnNome = document.getElementById("btnNome");
+        const textoNome = document.getElementById("textoNome");
 
 
-
-        function dizerObrigado () {
-            texto.textContent = "Obrigado por passares";
-        }
 
         function voltaNormal () {
             texto.textContent = "1. Passa aqui!";
         }
-
-        function pintarVermelho () {
-            textoPinta.style.color = "red";
-        }
-
-        function pintarVerde () {
-            textoPinta.style.color = "green";
-        }
-
-        function pintarAzul () {
-            textoPinta.style.color = "blue";
-        }
-
 
         function mudarCor() {
             input.style.backgroundColor = cores[i];
@@ -69,19 +92,75 @@
             }
         }
 
-        texto.addEventListener("mouseover", dizerObrigado);
+        texto.addEventListener("mouseover", () => {
+            texto.textContent = "Obrigado por passares"
+
+        });
+        
         texto.addEventListener("mouseout", voltaNormal);
-        vermelho.addEventListener("click", pintarVermelho);
-        verde.addEventListener("click", pintarVerde);
-        azul.addEventListener("click", pintarAzul);
         input.addEventListener("input", mudarCor);
 
+        document.querySelectorAll("button.color").forEach((e) => {
+            e.addEventListener("click", () =>{
+                const cor = e.dataset.color;
+
+                textoPinta.style.color = cor;
+            })
+  
+        })
+
+        document.querySelector('select').onchange = function() {
+        document.querySelector('body').style.backgroundColor = this.value;
+        }
+
         
+        document.querySelector('form').onsubmit = (e) => {
+
+            e.preventDefault() 
+
+            const nome = nomeInput.value
+            const idade = idadeInput.value
+
+            textoNome.textContent = `Olá, o ${nome} tem ${idade}!`
+        };
+
+        let contador = localStorage.getItem("contador");
+
+        if (!contador) {
+            contador = 0;
+            localStorage.setItem("contador", contador);
+        }
+
+        const valor = document.getElementById("contador");
+        valor.textContent = contador;
+
+        function contar() {
+            contador++; 
+            valor.textContent = contador; 
+            localStorage.setItem("contador", contador); 
+        }
+
+        const botaoConta = document.getElementById("btnConta");
+        botaoConta.addEventListener("click", contar);
+
+        const autoCounter = document.getElementById("autoCounter");
+        let contadorAuto = 0;
+
+        function contarAutomatico() {
+            contadorAuto++;                        
+            autoCounter.textContent = contadorAuto;
+        }
+
+        setInterval(contarAutomatico, 1000);
+
+
+
     </script>
 
     <footer>
+        <p>DIW 2025</p>
 
-</footer>
+    </footer>
 </body>
 
 </html>
